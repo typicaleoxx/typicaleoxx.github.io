@@ -1,3 +1,5 @@
+/* global FILES, TREE, COMMANDS, TERMINAL_RESPONSES, FORMSPREE_URL */
+
 /* ================================================================
    STATE
    ================================================================ */
@@ -192,7 +194,8 @@ function expandFolder(folderName) {
    ================================================================ */
 function openFile(path) {
   if (path.endsWith('.pdf')) {
-    downloadResume();
+    const filename = path.split('/').pop();
+    downloadResume(filename);
     return;
   }
 
@@ -284,9 +287,9 @@ function inlineMd(text) {
 function highlightJSON(raw) {
   return esc(raw)
     .replace(/"([^"]+)"(\s*:)/g, '<span class="json-key">"$1"</span>$2')
-    .replace(/:\s*"([^"]*)"/g, (m, v) => `: <span class="json-string">"${v}"</span>`)
-    .replace(/:\s*(\d+\.?\d*)/g, (m, v) => `: <span class="json-number">${v}</span>`)
-    .replace(/:\s*(true|false)/g, (m, v) => `: <span class="json-boolean">${v}</span>`)
+    .replace(/:\s*"([^"]*)"/g, (_, v) => `: <span class="json-string">"${v}"</span>`)
+    .replace(/:\s*(\d+\.?\d*)/g, (_, v) => `: <span class="json-number">${v}</span>`)
+    .replace(/:\s*(true|false)/g, (_, v) => `: <span class="json-boolean">${v}</span>`)
     .replace(/:\s*(null)/g, `: <span class="json-null">null</span>`)
     .replace(/([{}\[\],])/g, '<span class="json-punct">$1</span>');
 }
@@ -845,12 +848,13 @@ function runTerminalCommand(raw) {
 /* ================================================================
    RESUME DOWNLOAD
    ================================================================ */
-function downloadResume() {
+function downloadResume(filename) {
+  const file = filename || 'Sneha_Lama_SWE.pdf';
   const a = document.createElement('a');
-  a.href = 'assets/resume.pdf';
-  a.download = 'Sneha_Lama_Resume.pdf';
+  a.href = 'assets/' + file;
+  a.download = file;
   a.click();
-  showToast('Downloading resume...');
+  showToast('Downloading ' + file + '...');
 }
 
 /* ================================================================

@@ -38,7 +38,7 @@ I study Computer Science at the University of South Florida (GPA 3.72, Dean's Li
 
 ## How I think about problems
 
-I enjoy working on problems that feel repetitive or time-consuming. Instead of doing the same task again and again, I look for ways to automate it or improve the workflow. At Cyber Florida, I built tools that reduced manual effort for analysts and made their work more consistent. That kind of impact is what I find most rewarding, because even small improvements can make a big difference for a team.
+I enjoy working on problems that feel repetitive or time-consuming. Instead of doing the same task again and again, I look for ways to automate it or improve the workflow. At Cyber Florida, I built automation tools that reduced manual effort for analysts and made their work more consistent, cutting reporting time by 25% across a 10+ analyst team. That kind of impact is what I find most rewarding, because even small improvements can make a big difference for a team.
 
 I also like to try new ideas and test them in real projects. When I build something like an AI code explainer or an automation tool, I focus on learning through the process. I experiment, fix mistakes, and keep going until the system works the way I want. That hands-on approach helps me grow faster and understand things more clearly.
 
@@ -46,7 +46,7 @@ I also like to try new ideas and test them in real projects. When I build someth
 
 **Backend development.** APIs with Python and FastAPI, containerized with Docker, deployed on AWS and cloud platforms. I care about clean architecture and systems that hold up under real use.
 
-**Security engineering.** Automation that makes SOC work faster and more consistent. I've blocked 15+ malicious IPs weekly through threat analysis and built tools that cut analyst reporting time by 25%.
+**Security engineering.** Automation that makes SOC work faster and more consistent. I've investigated 100+ security alerts, blocked 25+ malicious IPs through threat analysis, and built tools that cut analyst reporting time by 25%.
 
 **AI tooling.** Tools that put LLMs to practical use: a code explainer combining static analysis with LLM reasoning, a syllabus planner that parses PDFs into study schedules, a wellbeing companion with a structured reasoning framework.
 
@@ -267,9 +267,9 @@ Bachelor of Science, Computer Science — Tampa, FL
 ### Security Analyst — Cyber Florida
 *Tampa, FL | May 2025 - Present*
 
-- Built SOC automation microservices in JavaScript using Docker and CI/CD pipelines, cutting repetitive analyst effort by 25% across a 10+ analyst team
-- Investigated 50+ daily security alerts using Splunk and Microsoft Defender, optimized alert parsing routines, and blocked 15+ malicious IPs weekly
-- Developed standardized incident response documentation through Python scripts and version-controlled repos, improving triage consistency
+- Built security operations automation tools in JavaScript, leveraging CI/CD pipelines and system design principles to streamline incident documentation workflows, reducing repetitive analyst effort by 25% across a 10+ analyst SOC team
+- Investigated 100+ security alerts using Splunk and Microsoft Defender, applying software engineering fundamentals and vulnerability management practices to optimize alert parsing routines, resulting in blocking 25+ malicious IPs through threat analysis
+- Developed standardized incident response documentation through Python scripts and version-controlled repositories, improving investigation consistency and accelerating analyst triage workflows
 
 ### NIST Security Assistant — Cyber Florida
 *Tampa, FL | Jan 2025 - May 2025*

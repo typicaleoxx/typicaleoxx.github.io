@@ -1,7 +1,7 @@
 // All portfolio content lives here.
 // To update anything — just edit this file.
 
-const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID'; // replace with your Formspree endpoint
+const FORMSPREE_URL = 'https://formspree.io/f/mwvalwvb';
 
 const FILES = {
   'welcome.md': `# welcome.md
@@ -312,7 +312,6 @@ I'm open to backend engineering, security engineering, and AI tooling roles. Int
 | Email | lsneha991@gmail.com |
 | GitHub | [github.com/typicaleoxx](https://github.com/typicaleoxx) |
 | LinkedIn | [linkedin.com/in/snehalama](https://www.linkedin.com/in/snehalama) |
-| Phone | (602) 663-4616 |
 
 ---
 
@@ -336,7 +335,13 @@ const TREE = [
   { type: 'file', name: 'skills.json' },
   { type: 'file', name: 'experience.md' },
   { type: 'file', name: 'contact.md' },
-  { type: 'file', name: 'resume.pdf' },
+  {
+    type: 'folder', name: 'resume', open: false,
+    children: [
+      { type: 'file', name: 'Sneha_Lama_SWE.pdf' },
+      { type: 'file', name: 'Sneha_Lama_Cyber.pdf' },
+    ],
+  },
 ];
 
 const COMMANDS = [
@@ -349,7 +354,8 @@ const COMMANDS = [
   { id: 'skills',     label: 'View Skills',              icon: 'file-json',action: () => openFile('skills.json') },
   { id: 'experience', label: 'Open Experience',          icon: 'file-md',  action: () => openFile('experience.md') },
   { id: 'contact',    label: 'Contact Me',               icon: 'file-md',  action: () => openFile('contact.md') },
-  { id: 'resume',     label: 'Download Resume',          icon: 'file-pdf', action: () => downloadResume() },
+  { id: 'resume-swe',   label: 'Download Resume (SWE)',    icon: 'file-pdf', action: () => downloadResume('Sneha_Lama_SWE.pdf') },
+  { id: 'resume-cyber', label: 'Download Resume (Cyber)',  icon: 'file-pdf', action: () => downloadResume('Sneha_Lama_Cyber.pdf') },
   { id: 'github',     label: 'Open GitHub',              icon: 'external', action: () => window.open('https://github.com/typicaleoxx', '_blank') },
   { id: 'linkedin',   label: 'Open LinkedIn',            icon: 'external', action: () => window.open('https://www.linkedin.com/in/snehalama', '_blank') },
   { id: 'theme',      label: 'Toggle Theme',             icon: 'theme',    action: () => toggleTheme() },
@@ -364,7 +370,11 @@ cs student @ university of south florida (gpa 3.72)
 building backend systems, security automation, and ai tools
 <span class="t-muted">currently open to: backend | security | ai engineering roles</span>`,
 
-  ls: `<span class="t-blue">projects/</span>   about-me.md   skills.json   experience.md   contact.md   resume.pdf   welcome.md`,
+  ls: `<span class="t-blue">projects/</span>   <span class="t-blue">resume/</span>   about-me.md   skills.json   experience.md   contact.md   welcome.md`,
+
+  'ls resume': `<span class="t-blue">resume/</span>
+  Sneha_Lama_SWE.pdf
+  Sneha_Lama_Cyber.pdf`,
 
   'ls projects': `<span class="t-blue">projects/</span>
   syllabAI.md
@@ -381,8 +391,7 @@ building backend systems, security automation, and ai tools
 
   contact: `<span class="t-yellow">email:</span>    lsneha991@gmail.com
 <span class="t-yellow">github:</span>   github.com/typicaleoxx
-<span class="t-yellow">linkedin:</span> linkedin.com/in/snehalama
-<span class="t-yellow">phone:</span>    (602) 663-4616`,
+<span class="t-yellow">linkedin:</span> linkedin.com/in/snehalama`,
 
   help: `<span class="t-green">available commands:</span>
   <span class="t-blue">whoami</span>          who is sneha

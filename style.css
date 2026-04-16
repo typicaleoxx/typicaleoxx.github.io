@@ -1552,65 +1552,113 @@ kbd {
 }
 
 /* ================================================================
+   SIDEBAR BACKDROP (mobile)
+   ================================================================ */
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 299;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar-backdrop.visible {
+  opacity: 1;
+}
+
+/* ================================================================
    RESPONSIVE — MOBILE (< 768px)
    ================================================================ */
 @media (max-width: 768px) {
   :root {
     --activitybar-w: 0px;
-    --sidebar-w: 260px;
+    --sidebar-w: 280px;
+    --tab-h: 38px;
   }
 
-  .activitybar {
-    display: none;
-  }
+  .activitybar { display: none; }
+  .resize-handle { display: none; }
+  .mobile-menu-btn { display: flex; }
+  .sb-clock { display: none; }
+  .minimap { display: none; }
 
-  .mobile-menu-btn {
-    display: flex;
-  }
-
+  /* sidebar slides in as a drawer */
   .sidebar {
     position: fixed;
     top: var(--titlebar-h);
     left: 0;
-    bottom: var(--statusbar-h);
+    bottom: 0;
+    width: var(--sidebar-w) !important;
     z-index: 300;
     transform: translateX(-100%);
+    transition: transform 0.22s ease;
     border-right: 1px solid var(--border);
-    box-shadow: 4px 0 16px rgba(0,0,0,0.4);
+    box-shadow: 4px 0 20px rgba(0,0,0,0.5);
+    min-width: unset;
   }
 
   .sidebar.open {
     transform: translateX(0);
   }
 
-  .resize-handle { display: none; }
+  .sidebar-backdrop {
+    display: block;
+  }
 
+  /* terminal full width */
   .terminal-panel {
     left: 0;
   }
 
   .problems-panel {
-    left: 0;
-    width: 90vw;
+    left: 8px;
+    width: calc(100vw - 16px);
     max-width: 420px;
   }
 
+  /* title bar */
   .titlebar-text {
     font-size: 11px;
-    max-width: 55vw;
+    max-width: 52vw;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
+  /* command palette */
   .palette-box {
-    top: 10%;
-    width: 92vw;
+    top: 8%;
+    width: 94vw;
   }
 
-  .contact-form {
-    max-width: 100%;
+  /* contact form */
+  .contact-form { max-width: 100%; }
+
+  /* bigger tap targets on file tree */
+  .tree-row {
+    height: 30px;
+    font-size: 14px;
   }
 
-  .sb-clock { display: none; }
+  /* bigger tabs */
+  .tab {
+    min-width: 80px;
+    padding: 0 8px 0 10px;
+  }
+
+  /* status bar — hide less important items */
+  .sb-encoding { display: none; }
+
+  /* editor breathing room */
+  .editor-content {
+    padding: 12px 14px 80px 12px;
+    font-size: 13px;
+  }
+
+  /* empty state */
+  .empty-name { font-size: 18px; }
+  .empty-hints { gap: 12px; }
+  .empty-hint { font-size: 13px; }
 }

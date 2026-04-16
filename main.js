@@ -532,6 +532,9 @@ function renderEditor() {
   const scroll = $('editor-scroll');
   if (scroll) scroll.scrollTop = 0;
 
+  // keep padding in sync with terminal height
+  syncEditorPadding();
+
   // update minimap
   updateMinimap();
 }
@@ -779,6 +782,14 @@ function runPaletteCommand(cmd) {
 /* ================================================================
    TERMINAL
    ================================================================ */
+function syncEditorPadding() {
+  const content = $('editor-content');
+  if (!content) return;
+  const panel = $('terminal-panel');
+  const termH = (state.terminalOpen && panel) ? panel.offsetHeight : 0;
+  content.style.paddingBottom = (termH + 32) + 'px';
+}
+
 function toggleTerminal(forceOpen) {
   const panel = $('terminal-panel');
   const shouldOpen = forceOpen !== undefined ? forceOpen : panel.hidden;
@@ -790,6 +801,7 @@ function toggleTerminal(forceOpen) {
       printTerminal(`<span class="t-green">sneha@portfolio</span>:<span class="t-blue">~</span>$ Welcome. Type <span class="t-blue">help</span> to see available commands.`);
     }
   }
+  syncEditorPadding();
 }
 
 function printTerminal(html) {
@@ -908,22 +920,42 @@ function initResize() {
 /* ================================================================
    MOBILE SIDEBAR
    ================================================================ */
+function closeMobileSidebar() {
+  const sidebar  = $('sidebar');
+  const backdrop = $('sidebar-backdrop');
+  const btn      = $('mobile-menu-btn');
+  sidebar.classList.remove('open');
+  backdrop.classList.remove('visible');
+  btn.setAttribute('aria-expanded', false);
+}
+
 function initMobileSidebar() {
-  const btn     = $('mobile-menu-btn');
-  const sidebar = $('sidebar');
+  const btn      = $('mobile-menu-btn');
+  const sidebar  = $('sidebar');
+  const backdrop = $('sidebar-backdrop');
 
   btn.addEventListener('click', () => {
     const open = sidebar.classList.toggle('open');
+    backdrop.classList.toggle('visible', open);
     btn.setAttribute('aria-expanded', open);
   });
 
-  // close on file click
+  // close via backdrop tap
+  backdrop.addEventListener('click', closeMobileSidebar);
+
+  // close on file open (mobile)
   $('file-tree').addEventListener('click', () => {
-    if (window.innerWidth <= 768) {
-      sidebar.classList.remove('open');
-      btn.setAttribute('aria-expanded', false);
-    }
+    if (window.innerWidth <= 768) closeMobileSidebar();
   });
+
+  // close on swipe left
+  let touchStartX = 0;
+  sidebar.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  sidebar.addEventListener('touchend', (e) => {
+    if (touchStartX - e.changedTouches[0].clientX > 60) closeMobileSidebar();
+  }, { passive: true });
 }
 
 /* ================================================================
@@ -1097,6 +1129,7 @@ function initTerminalControls() {
     const newH = Math.min(window.innerHeight * 0.7, Math.max(80, startH + delta));
     panel.style.height = newH + 'px';
     document.documentElement.style.setProperty('--terminal-h', newH + 'px');
+    syncEditorPadding();
   });
 
   document.addEventListener('mouseup', () => {

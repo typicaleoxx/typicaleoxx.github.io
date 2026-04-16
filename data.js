@@ -34,25 +34,31 @@ This site looks like VS Code - the text editor most developers live in. You don'
 
 ## Hi, I'm Sneha
 
-I'm a computer science student at the University of South Florida (GPA 3.72, Dean's List 2025). I build backend systems and security automation tools. Right now I'm a Security Analyst at Cyber Florida, writing automation for a 10+ analyst SOC team and investigating 50+ daily alerts using Splunk and Microsoft Defender.
+I study Computer Science at the University of South Florida (GPA 3.72, Dean's List 2025). I stay curious about how systems work from the inside. I like to take things apart, follow the logic step by step, and then build something better. That curiosity pulled me toward backend development, security engineering, and AI.
+
+## How I think about problems
+
+I enjoy working on problems that feel repetitive or time-consuming. Instead of doing the same task again and again, I look for ways to automate it or improve the workflow. At Cyber Florida, I built tools that reduced manual effort for analysts and made their work more consistent. That kind of impact is what I find most rewarding, because even small improvements can make a big difference for a team.
+
+I also like to try new ideas and test them in real projects. When I build something like an AI code explainer or an automation tool, I focus on learning through the process. I experiment, fix mistakes, and keep going until the system works the way I want. That hands-on approach helps me grow faster and understand things more clearly.
 
 ## What I work on
 
-**Backend development.** I build APIs with Python and FastAPI, containerize with Docker, and deploy on AWS and cloud platforms. I care about clean architecture and systems that hold up under real use.
+**Backend development.** APIs with Python and FastAPI, containerized with Docker, deployed on AWS and cloud platforms. I care about clean architecture and systems that hold up under real use.
 
-**Security engineering.** I write automation that makes SOC work faster and more consistent. I've blocked 15+ malicious IPs weekly through threat analysis and built tools that cut analyst reporting time by 25%.
+**Security engineering.** Automation that makes SOC work faster and more consistent. I've blocked 15+ malicious IPs weekly through threat analysis and built tools that cut analyst reporting time by 25%.
 
-**AI tooling.** I've shipped tools that put LLMs to practical use — a code explainer that combines static analysis with LLM reasoning, a syllabus planner that parses PDFs into structured study schedules, and a wellbeing companion with a structured reasoning framework.
-
-## Right now
-
-Security Analyst at Cyber Florida. CS student at USF. Building projects on weekends.
-
-Looking for roles in **backend engineering**, **security engineering**, or **AI tooling**. Internships or full-time.
+**AI tooling.** Tools that put LLMs to practical use: a code explainer combining static analysis with LLM reasoning, a syllabus planner that parses PDFs into study schedules, a wellbeing companion with a structured reasoning framework.
 
 ## Outside of code
 
-Bellini College Ambassador at USF. Tech Lead at Google Developers Group USF. Development Director at Trinket for Education. Secretary of the Nepalese Student Association.
+As Tech Lead at Google Developers Group USF and a Bellini College Ambassador, I mentor other students and help them build their skills. I enjoy guiding others, and I learn a lot from those experiences too.
+
+Also: Development Director at Trinket for Education, Secretary of the Nepalese Student Association USF.
+
+## Right now
+
+Security Analyst at Cyber Florida. CS student at USF. Looking for opportunities in **backend development**, **AI**, **cybersecurity**, and **software engineering**. I want to build systems that solve real problems, improve performance, and stay secure.
 
 ## Get in touch
 

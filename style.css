@@ -103,6 +103,8 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
 input { font: inherit; }
 svg { display: block; flex-shrink: 0; }
 
+[hidden] { display: none !important; }
+
 ::selection {
   background: var(--selection-bg);
   color: var(--text-white);
@@ -176,6 +178,7 @@ svg { display: block; flex-shrink: 0; }
   justify-content: center;
   position: relative;
   flex-shrink: 0;
+  -webkit-user-select: none;
   user-select: none;
   border-bottom: 1px solid rgba(0,0,0,0.2);
 }
@@ -318,6 +321,7 @@ svg { display: block; flex-shrink: 0; }
   height: 22px;
   padding-right: 8px;
   cursor: pointer;
+  -webkit-user-select: none;
   user-select: none;
   position: relative;
   white-space: nowrap;
@@ -445,6 +449,7 @@ svg { display: block; flex-shrink: 0; }
   background: var(--bg-tab-inactive);
   border-right: 1px solid var(--border-subtle);
   cursor: pointer;
+  -webkit-user-select: none;
   user-select: none;
   white-space: nowrap;
   position: relative;
@@ -648,6 +653,7 @@ kbd {
   line-height: var(--line-h);
   color: var(--text-dim);
   background: var(--bg-editor);
+  -webkit-user-select: none;
   user-select: none;
   overflow: hidden;
   border-right: 1px solid var(--border-subtle);
@@ -1047,6 +1053,7 @@ kbd {
   position: absolute;
   inset: 0;
   background: var(--bg-overlay);
+  -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
 }
 
@@ -1438,6 +1445,7 @@ kbd {
   align-items: center;
   gap: 6px;
   cursor: pointer;
+  -webkit-user-select: none;
   user-select: none;
 }
 

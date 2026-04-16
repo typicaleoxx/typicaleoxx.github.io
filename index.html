@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sneha Lama — Backend, Security, and AI Engineer. Portfolio.">
+  <meta name="author" content="Sneha Lama">
+  <title>Sneha Lama — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Boot screen (first visit only) -->
+  <div class="boot-screen" id="boot-screen" aria-hidden="true">
+    <div class="boot-inner">
+      <div class="boot-line" id="boot-line"></div>
+      <span class="boot-cursor"></span>
+    </div>
+  </div>
+
+  <!-- Main VS Code window -->
+  <div class="vscode" id="vscode">
+
+    <!-- Title bar -->
+    <div class="titlebar">
+      <div class="traffic-lights" aria-hidden="true">
+        <span class="tl tl-red"></span>
+        <span class="tl tl-yellow"></span>
+        <span class="tl tl-green"></span>
+      </div>
+      <span class="titlebar-text">sneha-lama — portfolio — VS Code</span>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle sidebar" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Workbench -->
+    <div class="workbench">
+
+      <!-- Activity bar -->
+      <nav class="activitybar" aria-label="Activity bar">
+        <div class="ab-top">
+          <button class="ab-btn active" data-panel="explorer" title="Explorer" aria-label="Explorer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22">
+              <path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+            </svg>
+          </button>
+          <button class="ab-btn" data-panel="search" title="Search (Ctrl+K)" aria-label="Command Palette">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22">
+              <circle cx="11" cy="11" r="7"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+          </button>
+          <button class="ab-btn" data-panel="git" title="Source Control" aria-label="Source Control">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22">
+              <circle cx="6" cy="6" r="2.5"/>
+              <circle cx="18" cy="6" r="2.5"/>
+              <circle cx="12" cy="18" r="2.5"/>
+              <path d="M6 8.5v4a3.5 3.5 0 003.5 3.5H12M18 8.5v2a3.5 3.5 0 01-3.5 3.5H12"/>
+            </svg>
+          </button>
+          <button class="ab-btn" data-panel="extensions" title="Skills" aria-label="Skills">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22">
+              <rect x="2" y="7" width="8" height="8" rx="1.5"/>
+              <rect x="14" y="7" width="8" height="8" rx="1.5"/>
+              <rect x="8" y="2" width="8" height="8" rx="1.5"/>
+              <rect x="8" y="14" width="8" height="8" rx="1.5"/>
+            </svg>
+          </button>
+        </div>
+        <div class="ab-bottom">
+          <a class="ab-btn" href="https://github.com/typicaleoxx" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar" aria-label="File Explorer">
+        <div class="sidebar-header">
+          <span class="sidebar-title">SNEHA_LAMA</span>
+        </div>
+        <div class="file-tree" id="file-tree" role="tree" aria-label="Files"></div>
+      </aside>
+
+      <!-- Sidebar resize handle -->
+      <div class="resize-handle" id="resize-handle" aria-hidden="true"></div>
+
+      <!-- Editor area -->
+      <main class="editor-area" id="editor-area">
+
+        <!-- Tab bar -->
+        <div class="tabbar" id="tabbar" role="tablist" aria-label="Open editors">
+          <div class="tabbar-inner" id="tabbar-inner"></div>
+        </div>
+
+        <!-- Editor body -->
+        <div class="editor-body">
+
+          <!-- Empty state (no tabs open) -->
+          <div class="editor-empty" id="editor-empty">
+            <div class="empty-logo" aria-hidden="true">&lt;/&gt;</div>
+            <p class="empty-name">Sneha Lama</p>
+            <p class="empty-sub">Backend · Security · AI</p>
+            <div class="empty-hints">
+              <div class="empty-hint"><kbd>Ctrl+K</kbd> open command palette</div>
+              <div class="empty-hint"><kbd>Ctrl+`</kbd> open terminal</div>
+              <div class="empty-hint">click a file on the left to start</div>
+            </div>
+          </div>
+
+          <!-- Active editor (shown when a file is open) -->
+          <div class="editor-pane" id="editor-pane" hidden>
+            <div class="breadcrumb" id="breadcrumb" aria-label="File path"></div>
+            <div class="editor-scroll" id="editor-scroll">
+              <div class="gutter" id="gutter" aria-hidden="true"></div>
+              <div class="editor-content" id="editor-content" tabindex="0"></div>
+              <div class="minimap" id="minimap" aria-hidden="true">
+                <div class="minimap-inner" id="minimap-inner"></div>
+                <div class="minimap-slider" id="minimap-slider"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+    </div><!-- /workbench -->
+
+    <!-- Status bar -->
+    <footer class="statusbar" role="contentinfo" aria-label="Status bar">
+      <div class="sb-left">
+        <a class="sb-item sb-branch" href="https://github.com/typicaleoxx" target="_blank" rel="noopener" title="Open GitHub repository">
+          <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor" aria-hidden="true">
+            <path d="M5.5 5.5A.5.5 0 016 5h.5v-.5a.5.5 0 011 0V5H8a.5.5 0 010 1H7.5v4.5a.5.5 0 01-1 0V6H6a.5.5 0 01-.5-.5zM3 7.5a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0z"/>
+          </svg>
+          &#9135; main
+        </a>
+        <button class="sb-item sb-problems" id="sb-problems" title="Toggle Problems panel">
+          <span id="sb-problems-text">&#10003; No Problems</span>
+        </button>
+      </div>
+      <div class="sb-right">
+        <span class="sb-item sb-ootw">
+          <span class="ootw-dot" aria-hidden="true"></span>
+          Open to Work
+        </span>
+        <span class="sb-item">UTF-8</span>
+        <span class="sb-item" id="sb-filetype">—</span>
+        <span class="sb-item sb-clock" id="sb-clock" aria-live="off"></span>
+      </div>
+    </footer>
+
+  </div><!-- /vscode -->
+
+  <!-- Command palette overlay -->
+  <div class="palette-overlay" id="palette-overlay" role="dialog" aria-modal="true" aria-label="Command Palette" hidden>
+    <div class="palette-backdrop" id="palette-backdrop"></div>
+    <div class="palette-box" role="combobox" aria-expanded="true" aria-haspopup="listbox">
+      <div class="palette-input-row">
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true" class="palette-icon">
+          <path d="M6.5 1C3.468 1 1 3.468 1 6.5S3.468 12 6.5 12c1.148 0 2.213-.37 3.084-.994l3.205 3.205.707-.707L10.29 10.29A5.472 5.472 0 0012 6.5C12 3.468 9.532 1 6.5 1zm0 1C9.532 2 11 3.468 11 6.5S9.532 11 6.5 11C3.468 11 2 9.532 2 6.5S3.468 2 6.5 2z"/>
+        </svg>
+        <input
+          type="text"
+          class="palette-input"
+          id="palette-input"
+          placeholder="Type a command or file name..."
+          autocomplete="off"
+          spellcheck="false"
+          aria-autocomplete="list"
+          aria-controls="palette-results"
+        >
+      </div>
+      <div class="palette-divider" aria-hidden="true"></div>
+      <div class="palette-label" id="palette-label">Recently Used</div>
+      <div class="palette-results" id="palette-results" role="listbox"></div>
+    </div>
+  </div>
+
+  <!-- Terminal panel -->
+  <div class="terminal-panel" id="terminal-panel" hidden>
+    <div class="terminal-header">
+      <div class="terminal-tabs">
+        <span class="terminal-tab-label">TERMINAL</span>
+      </div>
+      <div class="terminal-controls">
+        <button class="terminal-ctrl-btn" id="terminal-clear" title="Clear terminal" aria-label="Clear">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+            <path d="M2.854 2.146a.5.5 0 00-.708.708L4.293 5H3.5A1.5 1.5 0 002 6.5v5A1.5 1.5 0 003.5 13h9a1.5 1.5 0 001.5-1.5v-5A1.5 1.5 0 0012.5 5h-.793l2.147-2.146a.5.5 0 00-.708-.708L11 4.293V3.5A1.5 1.5 0 009.5 2h-3A1.5 1.5 0 005 3.5v.793L2.854 2.146zM6.5 3A.5.5 0 006 3.5v1h4v-1a.5.5 0 00-.5-.5h-3zM3 6.5a.5.5 0 01.5-.5h9a.5.5 0 01.5.5v5a.5.5 0 01-.5.5h-9a.5.5 0 01-.5-.5v-5z"/>
+          </svg>
+        </button>
+        <button class="terminal-ctrl-btn" id="terminal-close" title="Close terminal (Ctrl+`)" aria-label="Close">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+            <path d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="terminal-body">
+      <div class="terminal-output" id="terminal-output" aria-live="polite"></div>
+      <div class="terminal-input-row">
+        <span class="terminal-prompt" aria-hidden="true">sneha@portfolio:~$&nbsp;</span>
+        <input
+          type="text"
+          class="terminal-input"
+          id="terminal-input"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Terminal command input"
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- Problems panel (easter egg) -->
+  <div class="problems-panel" id="problems-panel" hidden>
+    <div class="problems-header">
+      <span>PROBLEMS</span>
+      <button class="problems-close" id="problems-close" aria-label="Close">
+        <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true">
+          <path d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="problems-body">
+      <div class="problem-row">
+        <span class="problem-severity warning" aria-label="Warning">&#9888;</span>
+        <span class="problem-source">sneha-lama</span>
+        <span class="problem-msg">Still not hired? Fix that: <a href="mailto:lsneha991@gmail.com" class="problem-link">lsneha991@gmail.com</a></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" aria-live="polite" hidden></div>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

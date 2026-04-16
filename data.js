@@ -1,5 +1,5 @@
 // All portfolio content lives here.
-// To update anything — just edit this file.
+// To update anything - just edit this file.
 
 const FORMSPREE_URL = 'https://formspree.io/f/mwvalwvb';
 
@@ -23,7 +23,7 @@ This site looks like VS Code - the text editor most developers live in. You don'
 | \`projects/\` | Four real projects with context and impact |
 | \`skills.json\` | Languages, tools, and certifications |
 | \`experience.md\` | Work history and education |
-| \`resume/\` | Two versions — SWE and Cyber (both download) |
+| \`resume/\` | Two versions - SWE and Cyber (view inline, download button included) |
 | \`contact.md\` | How to reach me |
 
 ---
@@ -256,7 +256,7 @@ Actively used by 10+ SOC analysts. 25% reduction in reporting time. Measurably i
 ## Education
 
 **University of South Florida**
-Bachelor of Science, Computer Science — Tampa, FL
+Bachelor of Science, Computer Science - Tampa, FL
 
 - GPA: 3.72
 - Dean's List 2025
@@ -264,14 +264,14 @@ Bachelor of Science, Computer Science — Tampa, FL
 
 ## Work experience
 
-### Security Analyst — Cyber Florida
+### Security Analyst - Cyber Florida
 *Tampa, FL | May 2025 - Present*
 
 - Built security operations automation tools in JavaScript, leveraging CI/CD pipelines and system design principles to streamline incident documentation workflows, reducing repetitive analyst effort by 25% across a 10+ analyst SOC team
 - Investigated 100+ security alerts using Splunk and Microsoft Defender, applying software engineering fundamentals and vulnerability management practices to optimize alert parsing routines, resulting in blocking 25+ malicious IPs through threat analysis
 - Developed standardized incident response documentation through Python scripts and version-controlled repositories, improving investigation consistency and accelerating analyst triage workflows
 
-### NIST Security Assistant — Cyber Florida
+### NIST Security Assistant - Cyber Florida
 *Tampa, FL | Jan 2025 - May 2025*
 
 - Conducted ICS/OT security assessments using structured threat modeling, NIST cybersecurity frameworks, and Python-based simulations
@@ -279,24 +279,24 @@ Bachelor of Science, Computer Science — Tampa, FL
 
 ## Leadership
 
-### Bellini College Ambassador — USF
+### Bellini College Ambassador - USF
 *2026 - Present*
 
 - Represent Bellini College at outreach events and open houses, engaging 100+ prospective students and families
 - Promote academic pathways in AI, cybersecurity, and computing
 
-### Tech Lead — Google Developers Group USF
+### Tech Lead - Google Developers Group USF
 *May 2025 - Dec 2025*
 
 - Led backend development using Firebase, Firestore, and Next.js API routes to build community developer tools
 - Mentored student developers on backend architecture, Git workflows, and software engineering best practices
 
-### Development Director — Trinket for Education
+### Development Director - Trinket for Education
 *Jan 2025 - Present*
 
 - Directed development for Project Students, supporting academically underprivileged students through mentorship and program coordination
 
-### Secretary — Nepalese Student Association USF
+### Secretary - Nepalese Student Association USF
 *May 2024 - Present*
 
 - Organized 3+ campus events, increasing student participation by 25%
@@ -304,8 +304,8 @@ Bachelor of Science, Computer Science — Tampa, FL
 ## Certifications
 
 - **Security BTL1**
-- **SANS ICS410** — Industrial Control Systems Security
-- **SANS ICS310** — Business of ICS Security`,
+- **SANS ICS410** - Industrial Control Systems Security
+- **SANS ICS310** - Business of ICS Security`,
 
   'contact.md': `# contact.md
 
@@ -360,8 +360,8 @@ const COMMANDS = [
   { id: 'skills',     label: 'View Skills',              icon: 'file-json',action: () => openFile('skills.json') },
   { id: 'experience', label: 'Open Experience',          icon: 'file-md',  action: () => openFile('experience.md') },
   { id: 'contact',    label: 'Contact Me',               icon: 'file-md',  action: () => openFile('contact.md') },
-  { id: 'resume-swe',   label: 'Download Resume (SWE)',    icon: 'file-pdf', action: () => downloadResume('Sneha_Lama_SWE.pdf') },
-  { id: 'resume-cyber', label: 'Download Resume (Cyber)',  icon: 'file-pdf', action: () => downloadResume('Sneha_Lama_Cyber.pdf') },
+  { id: 'resume-swe',   label: 'Open Resume (SWE)',    icon: 'file-pdf', action: () => openFile('resume/Sneha_Lama_SWE.pdf') },
+  { id: 'resume-cyber', label: 'Open Resume (Cyber)',  icon: 'file-pdf', action: () => openFile('resume/Sneha_Lama_Cyber.pdf') },
   { id: 'github',     label: 'Open GitHub',              icon: 'external', action: () => window.open('https://github.com/typicaleoxx', '_blank') },
   { id: 'linkedin',   label: 'Open LinkedIn',            icon: 'external', action: () => window.open('https://www.linkedin.com/in/snehalama', '_blank') },
   { id: 'theme',      label: 'Toggle Theme',             icon: 'theme',    action: () => toggleTheme() },
@@ -371,7 +371,7 @@ const COMMANDS = [
 ];
 
 const TERMINAL_RESPONSES = {
-  whoami: `<span class="t-green">sneha lama</span> — security analyst &amp; backend engineer
+  whoami: `<span class="t-green">sneha lama</span> - security analyst &amp; backend engineer
 cs student @ university of south florida (gpa 3.72)
 building backend systems, security automation, and ai tools
 <span class="t-muted">currently open to: backend | security | ai engineering roles</span>`,

@@ -39,4 +39,4 @@ Push to the `main` branch. GitHub Pages serves it automatically from the root.
 
 ---
 
-Built by Sneha Lama - [sneha-lama.github.io](https://sneha-lama.github.io)
+Built by Sneha Lama - [typicaleoxx.github.io](https://typicaleoxx.github.io)

@@ -193,12 +193,6 @@ function expandFolder(folderName) {
    TABS
    ================================================================ */
 function openFile(path) {
-  if (path.endsWith('.pdf')) {
-    const filename = path.split('/').pop();
-    downloadResume(filename);
-    return;
-  }
-
   const existing = state.tabs.find(t => t.path === path);
   if (existing) {
     switchTab(existing.id);
@@ -392,6 +386,25 @@ function renderMarkdown(text) {
   return html;
 }
 
+function renderPDFFile(filename) {
+  return `
+    <div class="pdf-viewer">
+      <div class="pdf-toolbar">
+        <span class="pdf-filename">${esc(filename)}</span>
+        <a class="pdf-download-btn" href="assets/${esc(filename)}" download="${esc(filename)}">
+          <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-5 2h10v-1H3v1z"/></svg>
+          Download
+        </a>
+      </div>
+      <iframe
+        class="pdf-frame"
+        src="assets/${esc(filename)}"
+        title="${esc(filename)}"
+      ></iframe>
+    </div>
+  `;
+}
+
 function renderJSONFile(text) {
   let formatted;
   try {
@@ -478,7 +491,7 @@ function renderEditor() {
   if (!state.activeTabId) {
     emptyEl.hidden  = false;
     paneEl.hidden   = true;
-    filetypeEl.textContent = '—';
+    filetypeEl.textContent = '-';
     return;
   }
 
@@ -489,6 +502,22 @@ function renderEditor() {
   paneEl.hidden  = false;
 
   const ext = fileExt(tab.name);
+
+  if (ext === 'pdf') {
+    gutterEl.innerHTML = '';
+    contentEl.innerHTML = renderPDFFile(tab.name);
+    filetypeEl.textContent = 'PDF';
+    const parts = tab.path.split('/');
+    bcrumbEl.innerHTML = parts.map((part, idx) => {
+      const isLast = idx === parts.length - 1;
+      const partPath = parts.slice(0, idx + 1).join('/');
+      const icon = idx === 0 ? '' : (isLast ? getFileIcon(part) : ICONS['folder']);
+      return `<span class="breadcrumb-seg">${idx > 0 ? '<span class="breadcrumb-sep">›</span>' : ''}${icon}<a data-path="${esc(partPath)}">${esc(part)}</a></span>`;
+    }).join('');
+    syncEditorPadding();
+    return;
+  }
+
   const rawContent = FILES[tab.path] || `# ${esc(tab.name)}\n\nContent coming soon.`;
 
   // render content
@@ -853,7 +882,7 @@ function runTerminalCommand(raw) {
   if (response) {
     printTerminal(response);
   } else {
-    printTerminal(`<span class="t-error">command not found: ${esc(cmd)}</span> — type <span class="t-blue">help</span>`);
+    printTerminal(`<span class="t-error">command not found: ${esc(cmd)}</span> - type <span class="t-blue">help</span>`);
   }
 }
 

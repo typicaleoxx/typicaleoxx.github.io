@@ -677,6 +677,57 @@ kbd {
   tab-size: 2;
 }
 
+/* pdf viewer */
+.editor-content:has(.pdf-viewer) {
+  padding: 0;
+  overflow: hidden;
+}
+
+.pdf-viewer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pdf-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.pdf-filename {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.pdf-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--accent-blue);
+  text-decoration: none;
+  padding: 4px 10px;
+  border: 1px solid var(--accent-blue);
+  border-radius: 3px;
+  transition: background 0.15s;
+}
+
+.pdf-download-btn:hover {
+  background: rgba(86, 156, 214, 0.15);
+}
+
+.pdf-frame {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: #fff;
+}
+
 /* scrollbar styling */
 .editor-content::-webkit-scrollbar,
 .file-tree::-webkit-scrollbar,

@@ -1068,13 +1068,61 @@ function initStatusBar() {
 }
 
 /* ================================================================
-   TERMINAL CONTROLS
+   TERMINAL CONTROLS + RESIZE
    ================================================================ */
 function initTerminalControls() {
   $('terminal-close').addEventListener('click', () => toggleTerminal(false));
   $('terminal-clear').addEventListener('click', () => {
     $('terminal-output').innerHTML = '';
   });
+
+  const handle = $('terminal-resize-handle');
+  const panel  = $('terminal-panel');
+  let dragging = false;
+  let startY = 0;
+  let startH = 0;
+
+  handle.addEventListener('mousedown', (e) => {
+    dragging = true;
+    startY = e.clientY;
+    startH = panel.offsetHeight;
+    handle.classList.add('dragging');
+    document.body.style.cursor = 'ns-resize';
+    document.body.style.userSelect = 'none';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!dragging) return;
+    const delta = startY - e.clientY;
+    const newH = Math.min(window.innerHeight * 0.7, Math.max(80, startH + delta));
+    panel.style.height = newH + 'px';
+    document.documentElement.style.setProperty('--terminal-h', newH + 'px');
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (!dragging) return;
+    dragging = false;
+    handle.classList.remove('dragging');
+    document.body.style.cursor = '';
+    document.body.style.userSelect = '';
+  });
+
+  // touch support
+  handle.addEventListener('touchstart', (e) => {
+    dragging = true;
+    startY = e.touches[0].clientY;
+    startH = panel.offsetHeight;
+  }, { passive: true });
+
+  document.addEventListener('touchmove', (e) => {
+    if (!dragging) return;
+    const delta = startY - e.touches[0].clientY;
+    const newH = Math.min(window.innerHeight * 0.7, Math.max(80, startH + delta));
+    panel.style.height = newH + 'px';
+    document.documentElement.style.setProperty('--terminal-h', newH + 'px');
+  }, { passive: true });
+
+  document.addEventListener('touchend', () => { dragging = false; });
 }
 
 /* ================================================================
@@ -1139,13 +1187,16 @@ function init() {
     setTimeout(() => openFile('welcome.md'), 100);
   }
 
+  // open terminal on load
+  setTimeout(() => toggleTerminal(true), 300);
+
   // sidebar hint for new visitors
   const hasSeenHint = localStorage.getItem('seenHint');
   if (!hasSeenHint) {
     localStorage.setItem('seenHint', '1');
     setTimeout(() => {
       showToast('Click any file on the left to open it, or press Ctrl+K', 4000);
-    }, 1200);
+    }, 1600);
   }
 }
 

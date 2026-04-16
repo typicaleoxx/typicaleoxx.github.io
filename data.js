@@ -23,7 +23,7 @@ This site looks like VS Code - the text editor most developers live in. You don'
 | \`projects/\` | Four real projects with context and impact |
 | \`skills.json\` | Languages, tools, and certifications |
 | \`experience.md\` | Work history and education |
-| \`resume.pdf\` | Downloads automatically |
+| \`resume/\` | Two versions — SWE and Cyber (both download) |
 | \`contact.md\` | How to reach me |
 
 ---
@@ -34,7 +34,7 @@ This site looks like VS Code - the text editor most developers live in. You don'
 
 ## Hi, I'm Sneha
 
-I study Computer Science at the University of South Florida (GPA 3.72, Dean's List 2025). I stay curious about how systems work from the inside. I like to take things apart, follow the logic step by step, and then build something better. That curiosity pulled me toward backend development, security engineering, and AI.
+I study Computer Science at the University of South Florida (GPA 3.72, Dean's List 2025). I honestlyy lovveee learning about how systems work from the inside. I like to take things apart, follow the logic step by step, and then build something better. That curiosity pulled me toward backend development, security engineering, and AI.
 
 ## How I think about problems
 

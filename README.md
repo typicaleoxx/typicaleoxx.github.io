@@ -1,4 +1,4 @@
-# sneha-lama.github.io
+# typicaleoxx.github.io
 
 My personal portfolio, built to look and feel like VS Code.
 

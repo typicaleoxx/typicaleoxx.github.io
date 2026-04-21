@@ -33,10 +33,6 @@ npx serve .
 python3 -m http.server 5500
 ```
 
-## Deploying
-
-Push to the `main` branch. GitHub Pages serves it automatically from the root.
-
 ---
 
 Built by Sneha Lama - [typicaleoxx.github.io](https://typicaleoxx.github.io)

@@ -1,8 +1,8 @@
 /* global FILES, TREE, COMMANDS, TERMINAL_RESPONSES, FORMSPREE_URL */
 
-/* ================================================================
+/*  
    STATE
-   ================================================================ */
+     */
 const state = {
   tabs: [],
   activeTabId: null,
@@ -21,9 +21,9 @@ const state = {
   resizeStartW: 0,
 };
 
-/* ================================================================
+/*  
    UTILS
-   ================================================================ */
+     */
 function esc(str) {
   return String(str)
     .replace(/&/g, '&amp;')
@@ -55,9 +55,9 @@ function showToast(msg, duration = 2400) {
   t._timer = setTimeout(() => { t.hidden = true; }, duration);
 }
 
-/* ================================================================
+/*  
    THEME
-   ================================================================ */
+     */
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('theme', theme);
@@ -69,9 +69,9 @@ function toggleTheme() {
   showToast('Theme switched to ' + state.theme);
 }
 
-/* ================================================================
+/*  
    FILE ICONS (inline SVG strings)
-   ================================================================ */
+     */
 const ICONS = {
   'file-md': `<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="tree-icon icon-md">
     <rect x="2" y="1" width="10" height="14" rx="1" stroke="currentColor" stroke-width="1.2"/>
@@ -110,9 +110,9 @@ function getPaletteIcon(type) {
   return ICONS[type] || ICONS['file-md'];
 }
 
-/* ================================================================
+/*  
    FILE TREE
-   ================================================================ */
+     */
 const treeState = {};
 
 function buildTree(container, nodes, depth = 0, parentPath = '') {
@@ -189,9 +189,9 @@ function expandFolder(folderName) {
   }
 }
 
-/* ================================================================
+/*  
    TABS
-   ================================================================ */
+     */
 function openFile(path) {
   const existing = state.tabs.find(t => t.path === path);
   if (existing) {
@@ -259,9 +259,8 @@ function renderTabs() {
   });
 }
 
-/* ================================================================
-   MARKDOWN RENDERER
-   ================================================================ */
+/* MARKDOWN RENDERER
+    */
 function inlineMd(text) {
   text = esc(text);
   // bold
@@ -477,9 +476,9 @@ function wireContactForm() {
   });
 }
 
-/* ================================================================
+/*  
    EDITOR RENDER
-   ================================================================ */
+     */
 function renderEditor() {
   const emptyEl  = $('editor-empty');
   const paneEl   = $('editor-pane');
@@ -568,9 +567,9 @@ function renderEditor() {
   updateMinimap();
 }
 
-/* ================================================================
+/*  
    MINIMAP
-   ================================================================ */
+     */
 function updateMinimap() {
   const content = $('editor-content');
   const inner   = $('minimap-inner');
@@ -599,9 +598,9 @@ function updateMinimap() {
   };
 }
 
-/* ================================================================
+/*  
    SIDEBAR PANELS
-   ================================================================ */
+     */
 function showPanel(panel) {
   // mark activity bar
   document.querySelectorAll('.ab-btn').forEach(b => b.classList.remove('active'));
@@ -697,9 +696,9 @@ function renderSkillsPanel(container) {
   container.appendChild(panel);
 }
 
-/* ================================================================
+/*  
    COMMAND PALETTE
-   ================================================================ */
+     */
 function openPalette() {
   state.paletteOpen = true;
   const overlay = $('palette-overlay');
@@ -808,9 +807,9 @@ function runPaletteCommand(cmd) {
   cmd.action();
 }
 
-/* ================================================================
+/*  
    TERMINAL
-   ================================================================ */
+     */
 function syncEditorPadding() {
   const content = $('editor-content');
   if (!content) return;
@@ -886,9 +885,9 @@ function runTerminalCommand(raw) {
   }
 }
 
-/* ================================================================
+/*  
    RESUME DOWNLOAD
-   ================================================================ */
+     */
 function downloadResume(filename) {
   const file = filename || 'Sneha_Lama_SWE.pdf';
   const a = document.createElement('a');
@@ -898,9 +897,9 @@ function downloadResume(filename) {
   showToast('Downloading ' + file + '...');
 }
 
-/* ================================================================
+/*  
    STATUS BAR CLOCK
-   ================================================================ */
+     */
 function startClock() {
   function tick() {
     const now = new Date();
@@ -912,9 +911,9 @@ function startClock() {
   setInterval(tick, 10000);
 }
 
-/* ================================================================
+/*  
    RESIZE HANDLE
-   ================================================================ */
+     */
 function initResize() {
   const handle = $('resize-handle');
   const sidebar = $('sidebar');
@@ -946,9 +945,9 @@ function initResize() {
   });
 }
 
-/* ================================================================
+/*  
    MOBILE SIDEBAR
-   ================================================================ */
+     */
 function closeMobileSidebar() {
   const sidebar  = $('sidebar');
   const backdrop = $('sidebar-backdrop');
@@ -987,9 +986,9 @@ function initMobileSidebar() {
   }, { passive: true });
 }
 
-/* ================================================================
+/*  
    KEYBOARD SHORTCUTS
-   ================================================================ */
+     */
 function initKeyboard() {
   document.addEventListener('keydown', (e) => {
     const ctrl = e.ctrlKey || e.metaKey;
@@ -1086,9 +1085,9 @@ function initKeyboard() {
   $('palette-backdrop').addEventListener('click', closePalette);
 }
 
-/* ================================================================
+/*  
    ACTIVITY BAR CLICKS
-   ================================================================ */
+     */
 function initActivityBar() {
   document.querySelectorAll('.ab-btn[data-panel]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1112,9 +1111,9 @@ function initActivityBar() {
   });
 }
 
-/* ================================================================
+/*  
    STATUS BAR CLICKS
-   ================================================================ */
+     */
 function initStatusBar() {
   $('sb-problems').addEventListener('click', () => {
     const panel = $('problems-panel');
@@ -1128,9 +1127,9 @@ function initStatusBar() {
   });
 }
 
-/* ================================================================
+/*  
    TERMINAL CONTROLS + RESIZE
-   ================================================================ */
+     */
 function initTerminalControls() {
   $('terminal-close').addEventListener('click', () => toggleTerminal(false));
   $('terminal-clear').addEventListener('click', () => {
@@ -1187,9 +1186,9 @@ function initTerminalControls() {
   document.addEventListener('touchend', () => { dragging = false; });
 }
 
-/* ================================================================
+/*  
    BOOT SEQUENCE
-   ================================================================ */
+     */
 function boot() {
   applyTheme(state.theme);
 
@@ -1227,9 +1226,9 @@ function boot() {
   setTimeout(typeChar, 300);
 }
 
-/* ================================================================
+/*  
    INIT
-   ================================================================ */
+     */
 function init() {
   rebuildTree();
   renderTabs();
@@ -1262,7 +1261,7 @@ function init() {
   }
 }
 
-/* ================================================================
+/*  
    START
-   ================================================================ */
+     */
 boot();

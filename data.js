@@ -4,7 +4,7 @@
 const FORMSPREE_URL = 'https://formspree.io/f/mwvalwvb';
 
 const FILES = {
-  'welcome.md': `# welcome.md
+  "welcome.md": `# welcome.md
 
 Hey, glad you're here.
 
@@ -28,19 +28,19 @@ This site looks like VS Code - the text editor most developers live in. You don'
 
 ---
 
-*Currently open to backend, AI, and security engineering roles.*`,
+*Currently open to software engineering, backend, AI, and security engineering roles.*`,
 
-  'about-me.md': `# about-me.md
+  "about-me.md": `# about-me.md
 
 ## Hi, I'm Sneha
 
-I study Computer Science at the University of South Florida (GPA 3.72, Dean's List 2025). I honestlyy lovveee learning about how systems work from the inside. I like to take things apart, follow the logic step by step, and then build something better. That curiosity pulled me toward backend development, security engineering, and AI.
+I study Computer Science at the University of South Florida (Dean's List 2025 - 4.0 GPA). I honestlyy lovveee learning about how systems work from the inside. I like to take things apart, follow the logic step by step, and then build something better. That curiosity pulled me toward backend development, security engineering, and AI.
 
 ## How I think about problems
 
-I enjoy working on problems that feel repetitive or time-consuming. Instead of doing the same task again and again, I look for ways to automate it or improve the workflow. At Cyber Florida, I built automation tools that reduced manual effort for analysts and made their work more consistent, cutting reporting time by 25% across a 10+ analyst team. That kind of impact is what I find most rewarding, because even small improvements can make a big difference for a team.
+I enjoy working on problems that feel repetitive or timem consuming. Instead of doing the same task again and again, I look for ways to automate it or improve the workflow. At Cyber Florida, I built automation tools that reduced manual effort for analysts and made their work more consistent, cutting reporting time by 25% across a 10+ analyst team. That kind of impact is what I find most rewarding, because even small improvements can make a big difference for a team.
 
-I also like to try new ideas and test them in real projects. When I build something like an AI code explainer or an automation tool, I focus on learning through the process. I experiment, fix mistakes, and keep going until the system works the way I want. That hands-on approach helps me grow faster and understand things more clearly.
+I also like to try new ideas and test them in real projects. When I build something like an AI code explainer or an automation tool, I focus on learning through the process. I experiment, fix mistakes, and keep going until the system works the way I want. That approach helps me grow faster and understand things more clearly.
 
 ## What I work on
 
@@ -52,13 +52,13 @@ I also like to try new ideas and test them in real projects. When I build someth
 
 ## Outside of code
 
-As Tech Lead at Google Developers Group USF and a Bellini College Ambassador, I mentor other students and help them build their skills. I enjoy guiding others, and I learn a lot from those experiences too.
+Outside of tech, I care about giving back. I’ve mentored students, led both tech and cultural events, and volunteered for causes that matter to me. These things taught me the value of empathy, leadership, and building community, not just in life, but in tech too.
 
-Also: Development Director at Trinket for Education, Secretary of the Nepalese Student Association USF.
+Also: Bellini College Ambassador at USF Bellini College of Artificial Intelligence, Cybersecurity and Computing, Development Director at Trinket for Education, Secretary of the Nepalese Student Association USF.
 
 ## Right now
 
-Security Analyst at Cyber Florida. CS student at USF. Looking for opportunities in **backend development**, **AI**, **cybersecurity**, and **software engineering**. I want to build systems that solve real problems, improve performance, and stay secure.
+Security Analyst at Cyber Florida. CS student at USF. Looking for opportunities in **software engineering**, **backend development**, **AI** and **cybersecurity**. I want to build systems that solve real problems, improve performance, and stay secure.
 
 ## Get in touch
 
@@ -66,7 +66,7 @@ Security Analyst at Cyber Florida. CS student at USF. Looking for opportunities 
 - GitHub: [github.com/typicaleoxx](https://github.com/typicaleoxx)
 - LinkedIn: [linkedin.com/in/snehalama](https://www.linkedin.com/in/snehalama)`,
 
-  'projects/syllabAI.md': `# syllabAI.md
+  "projects/syllabAI.md": `# syllabAI.md
 
 ## SyllabAI
 
@@ -105,7 +105,7 @@ Full pipeline from raw PDF to action-oriented calendar. Multi-syllabus merge on 
 
 **Status:** Deployed`,
 
-  'projects/ai-code-explainer.md': `# ai-code-explainer.md
+  "projects/ai-code-explainer.md": `# ai-code-explainer.md
 
 ## AI Code Explainer
 
@@ -136,7 +136,7 @@ Containerized and deployed to AWS ECS via CI/CD pipelines. Real-time inference t
 
 **Status:** Deployed`,
 
-  'projects/ai-wellbeing-companion.md': `# ai-wellbeing-companion.md
+  "projects/ai-wellbeing-companion.md": `# ai-wellbeing-companion.md
 
 ## AI Wellbeing Companion
 
@@ -167,7 +167,7 @@ A conversational assistant built to respond to stress and anxiety messages throu
 
 **Status:** Completed`,
 
-  'projects/soc-macro-extension.md': `# soc-macro-extension.md
+  "projects/soc-macro-extension.md": `# soc-macro-extension.md
 
 ## SOC Macro Chrome Extension
 
@@ -177,7 +177,7 @@ A Chrome extension that automates repetitive incident documentation for Security
 
 **What it does.**
 
-- One-click automation for standard incident documentation workflows
+- One click automation for standard incident documentation workflows
 - Designed and deployed for the Cyber Florida SOC team
 - Adopted by 10+ analysts across the team
 - Reduced analyst reporting time by 25%
@@ -199,7 +199,7 @@ Actively used by 10+ SOC analysts. 25% reduction in reporting time. Measurably i
 
 **Status:** Deployed, actively used`,
 
-  'skills.json': `{
+  "skills.json": `{
   "languages": [
     "Python",
     "JavaScript",
@@ -251,7 +251,7 @@ Actively used by 10+ SOC analysts. 25% reduction in reporting time. Measurably i
   ]
 }`,
 
-  'experience.md': `# experience.md
+  "experience.md": `# experience.md
 
 ## Education
 
@@ -261,6 +261,10 @@ Bachelor of Science, Computer Science - Tampa, FL
 - GPA: 3.72
 - Dean's List 2025
 - Coursework: Data Structures, Algorithms, Computer Organization, Discrete Mathematics, Software Design
+
+**St. Xavier’s College, Maitighar**
+
+High School Diploma (A+)
 
 ## Work experience
 
@@ -292,7 +296,7 @@ Bachelor of Science, Computer Science - Tampa, FL
 - Mentored student developers on backend architecture, Git workflows, and software engineering best practices
 
 ### Development Director - Trinket for Education
-*Jan 2025 - Present*
+*Jan 2025 - Feb 2026*
 
 - Directed development for Project Students, supporting academically underprivileged students through mentorship and program coordination
 
@@ -307,11 +311,11 @@ Bachelor of Science, Computer Science - Tampa, FL
 - **SANS ICS410** - Industrial Control Systems Security
 - **SANS ICS310** - Business of ICS Security`,
 
-  'contact.md': `# contact.md
+  "contact.md": `# contact.md
 
 ## Let's talk
 
-I'm open to backend engineering, security engineering, and AI tooling roles. Internships or full-time.
+I'm open to software engineering, backend engineering, security engineering, and AI engineering roles.
 
 | | |
 |--|--|
@@ -371,10 +375,10 @@ const COMMANDS = [
 ];
 
 const TERMINAL_RESPONSES = {
-  whoami: `<span class="t-green">sneha lama</span> - security analyst &amp; backend engineer
-cs student @ university of south florida (gpa 3.72)
+  whoami: `<span class="t-green">sneha lama</span> - security analyst &amp; emerging software engineer
+cs student @ university of south florida 
 building backend systems, security automation, and ai tools
-<span class="t-muted">currently open to: backend | security | ai engineering roles</span>`,
+<span class="t-muted">currently open to: software engineering | backend | security | ai engineering roles</span>`,
 
   ls: `<span class="t-blue">projects/</span>   <span class="t-blue">resume/</span>   about-me.md   skills.json   experience.md   contact.md   welcome.md`,
 
@@ -416,10 +420,10 @@ building backend systems, security automation, and ai tools
 Author: Sneha Lama &lt;lsneha991@gmail.com&gt;
 Date:   just now
 
-    finally finished the portfolio at 2am
+    yayy finally finished the portfolio at 2am
 
 <span class="t-yellow">commit f9e8d7c</span>
-    fixed that one bug that was definitely not my fault
+    fixed that one bug that was definitelyy not my fault
 
 <span class="t-yellow">commit 3a4b5c6</span>
     added more projects (hired yet?)
